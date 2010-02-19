@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+</head>
+<body>
+    <form action="/create" method="POST" accept-charset="UTF-8">
+        <h1>Tweet new entries on your atom feed (blog/buzz/etc)</h1>
+        <ol>
+            <li><label for="feed">Enter the Atom Feed Url: </label> <input name="atomUrl" type="text" size="140" /></li>
+            <li><label for="template">Set up you Tweet template </label> <input name="tweetTemplate" type="text" size="140" value="✍ New Blog Entry &quot;{title}&quot; {link}"/></li>
+            <li><input type="submit" value="Connect to your twitter account"/></li> 
+        </ol>
+    </form>
+</body>
+</html>

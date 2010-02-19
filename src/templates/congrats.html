@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <h1>
+            Congrats, we're about to hook it up.
+        </h1>
+        <p>
+            Hey @{{ twitterName }}!<br />
+            Here is how a tweet would look for your latest blog entry:<br />
+            {{ tweet }}
+        </p>
+        <form method="post">
+            <input name="submitType" type="submit" value="Tweet this Now" /> (to see it in action) -or- <input name="submitType" type="submit" value="Tweet my future blog entries!" /><br />
+            Auto tweeting on future posts could take up to 5 minutes.
+        </form>
+    </body>
+</html>

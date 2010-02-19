@@ -1,0 +1,4 @@
+cron:
+- description: Check for new posts and tweet them
+  schedule: every 5 minutes
+  url: /tasks/poller
