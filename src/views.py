@@ -107,6 +107,10 @@ class OAuthCallbackPage(RequestHandler):
             else:
                 self.response.out.write(template.render('templates/alreadytweeted.html', {}))
         else:
+            entryIds = feedreader.getAllEntryIds(connector.atomUrl)
+            connector.entryIdsThatHaveBeenTweeted.extend(entryIds)
+            connector.enabled = True
+            connector.put()
             self.response.out.write(template.render('templates/setupcomplete.html', {}))
     
         connector.enabled = linkThem

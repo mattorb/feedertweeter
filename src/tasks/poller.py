@@ -31,7 +31,7 @@ class Poller(webapp.RequestHandler):
                         connector.put()
                     else:
                         if id not in connector.entryIdsThatHaveBeenTweeted:
-                            tweet = tweetwriter.makeTweet(title, linkToShorten, connector.tweetTemplate)
+                            tweet = tweetwriter.makeTweet(title, link, connector.tweetTemplate)
                             
                             auth = tweepy.OAuthHandler(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET)
                             auth.set_access_token(connector.access_token_key, connector.access_token_secret)
