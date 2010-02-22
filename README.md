@@ -7,7 +7,7 @@ It tweets based on a template you specify.
 Clone the repo, then create a config_apis.py file (using the template at the bottom of config.py) in the src directory and fill in the values for your twitter and bitly api keys.
 
 ## To Install it (to your appengine account)
-Do all the local install stuff, then modify the app id in app.yaml.   
+Do all the local install stuff, then modify the app id in app.yaml and deploy to appengine.
 
 ## Dev notes 
 I'm using Ale to continuously lint and run tests.  Install it with 'git submodule init', then 'git submodule update'.
