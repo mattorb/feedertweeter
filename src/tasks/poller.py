@@ -23,6 +23,7 @@ class Poller(webapp.RequestHandler):
                 try:
                     logging.info('checking for new blog entries at site : %s' % connector.atomUrl)
                     (title, link, id) = feedreader.getLatestEntry(connector.atomUrl)
+                    logging.info('latest entry for %s is %s' % (connector.atomUrl, title))
                     
                     if len(connector.entryIdsThatHaveBeenTweeted) == 0:
                         #if none have been done, mark all done -- don't want to blast

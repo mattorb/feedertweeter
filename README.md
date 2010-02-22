@@ -4,8 +4,7 @@ App engine/py experiment to tweet new entries from an atom feed to a twitter acc
 It tweets based on a template you specify.
 
 ## To Install it (locally)
-Clone the repo, then create a config_apis.py file (using the template at the bottom of config.py) and fill in the values for your
-twitter and bitly api keys.
+Clone the repo, then create a config_apis.py file (using the template at the bottom of config.py) in the src directory and fill in the values for your twitter and bitly api keys.
 
 ## To Install it (to your appengine account)
 Do all the local install stuff, then modify the app id in app.yaml.   
@@ -15,9 +14,11 @@ I'm using Ale to continuously lint and run tests.  Install it with 'git submodul
 Set up the test routine with 'ale install test', 'ale install pyflakes', then 'ale install watcher'.  
 To start the continuous test runner use 'ale watcher'
 
-## Libraries used
+## Libraries/services used
 Universal feed Parser
 Tweepy
+bitly
+twitter
 
 ##To-do
 Prioritized:
