@@ -12,20 +12,20 @@ Do all the local install stuff, then modify the app id in app.yaml and deploy to
 ## Dev notes 
 I'm using Ale to continuously lint and run tests.  Install it with 'git submodule init', then 'git submodule update'.
 Set up the test routine with 'ale install test', 'ale install pyflakes', then 'ale install watcher'.  
+
 To start the continuous test runner use 'ale watcher'
 
 ## Libraries/services used
-Universal feed Parser
-Tweepy
-bitly
-twitter
+* Universal feed Parser
+* Tweepy
+* bitly
+* twitter
 
 ##To-do
-Prioritized:
--
-
-Not prioritized:
-- tests around length limiting (for twitter 140 char limit)
-- error handling all around
-- visual revamp
-- smoke/integration tests
+* Prioritized:
+  * nada
+* Not prioritized:
+  * tests around length limiting (for twitter 140 char limit)
+  * error handling all around
+  * visual revamp
+  * smoke/integration tests
