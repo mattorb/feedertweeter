@@ -21,9 +21,9 @@ class Poller(webapp.RequestHandler):
         for connector in enabledConnections:
             if connector.access_token_key and connector.access_token_secret:
                 try:
-                    logging.info('checking for new blog entries at site : %s' % connector.atomUrl)
                     (title, link, id) = feedreader.getLatestEntry(connector.atomUrl)
-                    logging.info('latest entry for %s is %s' % (connector.atomUrl, title))
+                    logging.debug('latest entry for %s is %s (%s)' % (connector.atomUrl, id, title))
+                    logging.debug('entries that have been tweeted are: %s' % connector.entryIdsThatHaveBeenTweeted)
                     
                     if len(connector.entryIdsThatHaveBeenTweeted) == 0:
                         #if none have been done, mark all done -- don't want to blast
@@ -32,6 +32,7 @@ class Poller(webapp.RequestHandler):
                         connector.put()
                     else:
                         if id not in connector.entryIdsThatHaveBeenTweeted:
+                            logging.info('Posting entry with id %s - %s' % (id, link))
                             tweet = tweetwriter.makeTweet(title, link, connector.tweetTemplate)
                             
                             auth = tweepy.OAuthHandler(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET)
@@ -41,6 +42,7 @@ class Poller(webapp.RequestHandler):
                             api.update_status(tweet)
 
                             connector.entryIdsThatHaveBeenTweeted.append(id)
+                            connector.put()
                         else:
                             pass # the latest entry has been tweeted already
                 except Exception, e:
