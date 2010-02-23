@@ -23,7 +23,7 @@ class Poller(webapp.RequestHandler):
                 try:
                     (title, link, id) = feedreader.getLatestEntry(connector.atomUrl)
                     logging.debug('latest entry for %s is %s (%s)' % (connector.atomUrl, id, title))
-                    logging.debug('entries that have been tweeted are: %s' % connector.entryIdsThatHaveBeenTweeted)
+#                    logging.debug('entries that have been tweeted are: %s' % connector.entryIdsThatHaveBeenTweeted)
                     
                     if len(connector.entryIdsThatHaveBeenTweeted) == 0:
                         #if none have been done, mark all done -- don't want to blast
